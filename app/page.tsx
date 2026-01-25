@@ -9,12 +9,9 @@ export default function Home() {
       {/* Hero Section */}
       <main className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Beyond Booking
           </h1>
-          <p className="text-lg md:text-xl font-medium text-blue-600 mb-6">
-            Booking to Experiencing
-          </p>
           <p className="text-xl md:text-2xl text-gray-600 mb-4">
             Smart Digital Tourism Experience Platform for Tamil Nadu
           </p>
