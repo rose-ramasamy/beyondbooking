@@ -32,6 +32,30 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Platform Description */}
+        <div className="max-w-4xl mx-auto text-center mb-16 bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            From Booking to Experiencing
+          </h2>
+          <h3 className="text-xl font-semibold text-blue-600 mb-6">
+            Beyond Booking: Smart Digital Tourism Experience Platform for Tamil Nadu
+          </h3>
+          <div className="text-left space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              Tamil Nadu's tourism ecosystem is rich and diverse, but digital enablement is largely limited to accommodation booking and static information. Small hotels, homestays, rural tourism operators, and local experience providers lack visibility, demand intelligence, and tools to package authentic tourism experiences.
+            </p>
+            <p>
+              Tourists, on the other hand, struggle to discover meaningful local experiences beyond stays. This innovation proposes a Smart Digital Tourism Experience Platform that goes beyond traditional booking systems. The platform enables tourists to discover, plan, and experience complete travel journeys by combining stays with local experiences such as heritage activities, wellness programs, village tourism, and seasonal events.
+            </p>
+            <p>
+              The core innovation lies in shifting tourism from a booking-centric model to an experience-first and intelligence-driven platform. It provides AI-driven demand and seasonality insights for small operators, personalized itinerary recommendations for tourists, and simple dashboards that offer visibility into occupancy and visitor trends.
+            </p>
+            <p>
+              By digitally empowering local tourism ecosystems and distributing tourist footfall beyond major destinations, the platform supports inclusive, sustainable, and scalable tourism growth across Tamil Nadu.
+            </p>
+          </div>
+        </div>
+
         {/* What Makes Us Different */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="text-center p-6 bg-white rounded-lg shadow-md">
@@ -127,10 +151,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400 mb-4">
-            © 2026 Beyond Booking - TN Tourism Innovation Hackathon PoC
-          </p>
-          <p className="text-sm text-gray-500 mb-2">
-            Built with Next.js, TypeScript, MongoDB, and AI-powered insights
+            © 2026 Beyond Booking - TN Tourism Innovation Hackathon
           </p>
           <p className="text-xs text-gray-600">
             Images courtesy of Tamil Nadu Tourism Department - <a href="https://www.tamilnadutourism.tn.gov.in/" className="text-blue-400 hover:text-blue-300">www.tamilnadutourism.tn.gov.in</a>
