@@ -12,6 +12,9 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Beyond Booking
           </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold text-blue-600 mb-4">
+            Booking to Experiencing
+          </h2>
           <p className="text-xl md:text-2xl text-gray-600 mb-4">
             Smart Digital Tourism Experience Platform for Tamil Nadu
           </p>
