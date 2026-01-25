@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
   const [user, setUser] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
@@ -27,6 +29,7 @@ export default function Header() {
   const handleSignOut = () => {
     setUser(null);
     localStorage.removeItem('demo_user');
+    router.push('/');
   };
 
   return (
