@@ -277,6 +277,21 @@ const destinationsData = {
   }
 };
 
+export async function generateStaticParams() {
+  return [
+    { id: 'mahabalipuram' },
+    { id: 'ooty' },
+    { id: 'kanyakumari' },
+    { id: 'madurai' },
+    { id: 'kodaikanal' },
+    { id: 'rameswaram' },
+    { id: 'chennai' },
+    { id: 'srivilliputhur' },
+    { id: 'palani' },
+    { id: 'kolli-hills' },
+  ];
+}
+
 export default function DestinationDetail() {
   const params = useParams();
   const destinationId = params.id as string;
