@@ -1,6 +1,3 @@
-'use client';
-
-import { useParams } from 'next/navigation';
 import Header from '../../../components/Header';
 import Link from 'next/link';
 
@@ -292,9 +289,8 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function DestinationDetail() {
-  const params = useParams();
-  const destinationId = params.id as string;
+export default function DestinationDetail({ params }: { params: { id: string } }) {
+  const destinationId = params.id;
   const destination = destinationsData[destinationId as keyof typeof destinationsData];
 
   if (!destination) {
