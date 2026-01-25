@@ -289,8 +289,9 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function DestinationDetail({ params }: { params: { id: string } }) {
-  const destinationId = params.id;
+export default async function DestinationDetail({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const destinationId = resolvedParams.id;
   const destination = destinationsData[destinationId as keyof typeof destinationsData];
 
   if (!destination) {
