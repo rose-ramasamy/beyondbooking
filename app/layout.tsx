@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Beyond Booking - Smart Digital Tourism Platform",
   description: "Experience-first tourism platform for Tamil Nadu with AI recommendations and operator insights",
   icons: {
-    icon: "/beyond-booking-icon.svg",
+    icon: "/beyondbooking/beyond-booking-icon.svg",
   },
 };
 
