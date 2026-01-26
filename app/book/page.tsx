@@ -1422,9 +1422,9 @@ function BookPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-x-auto">
         <Header />
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4 break-words">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               {destinationParam && destination
                 ? `Experiences in ${destination.name}`
                 : 'All Experiences in Tamil Nadu'
