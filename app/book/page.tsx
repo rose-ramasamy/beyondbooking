@@ -1371,8 +1371,8 @@ function BookPage() {
 
               <form onSubmit={handleBookingSubmit} className="space-y-8">
                 {/* Enhanced Trip Details */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-200/40">
-                  <div className="flex items-center space-x-3 mb-4">
+                <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                  <div className="flex items-center space-x-3 mb-6">
                     <div className="p-2 bg-blue-100 rounded-xl">
                       <span className="text-blue-600 text-lg">📅</span>
                     </div>
@@ -1402,7 +1402,7 @@ function BookPage() {
                       )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">End Date (Optional)</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">End Date</label>
                       <div className="relative">
                         <input
                           type="date"
