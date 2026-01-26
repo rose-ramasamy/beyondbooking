@@ -39,7 +39,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <img
-                src="/simple-bb-logo.svg"
+                src="/beyondbooking/simple-bb-logo.svg"
                 alt="Beyond Booking"
                 className="h-10 w-auto"
               />
