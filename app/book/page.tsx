@@ -1420,7 +1420,7 @@ function BookPage() {
       : mockExperiences;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-x-hidden">
         <Header />
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="text-center mb-8">
@@ -1514,10 +1514,10 @@ function BookPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 overflow-x-hidden">
       <Header />
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12 overflow-x-hidden">
         {/* Enhanced Breadcrumb */}
         <nav className="mb-8">
           <ol className="flex items-center space-x-3 text-sm">
