@@ -1424,7 +1424,7 @@ function BookPage() {
         <Header />
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8 break-words">
           <div className="text-center mb-8">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h1 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
               {destinationParam && destination
                 ? `Experiences in ${destination.name}`
                 : 'All Experiences in Tamil Nadu'
@@ -1647,7 +1647,7 @@ function BookPage() {
 
               <form onSubmit={handleBookingSubmit} className="space-y-8">
                 {/* Enhanced Trip Details */}
-                <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="p-2 bg-blue-100 rounded-xl">
                       <span className="text-blue-600 text-lg">📅</span>
