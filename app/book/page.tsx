@@ -1654,8 +1654,8 @@ function BookPage() {
                     </div>
                     <h3 className="text-xl font-bold text-slate-800">Trip Details</h3>
                   </div>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="overflow-hidden">
                       <label className="block text-sm font-medium text-gray-700 mb-1">Start Date *</label>
                       <div className="relative">
                         <input
@@ -1677,7 +1677,7 @@ function BookPage() {
                         <p className="text-red-500 text-xs mt-1">{formErrors.date}</p>
                       )}
                     </div>
-                    <div>
+                    <div className="overflow-hidden">
                       <label className="block text-sm font-medium text-gray-700 mb-1">End Date</label>
                       <div className="relative">
                         <input
