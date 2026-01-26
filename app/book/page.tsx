@@ -1360,7 +1360,7 @@ function BookPage() {
             const expItem = item as typeof mockExperiences[0];
             return exp.location === expItem.location && exp.id !== expItem.id;
           } else {
-            const destItem = item as typeof mockDestinations[0];
+            const destItem = item as any; // Destination item from destinationsData
             return exp.location === destItem.name;
           }
         }).slice(0, 6); // Show more related experiences
@@ -1368,7 +1368,7 @@ function BookPage() {
         setRelatedExperiences(related);
 
         // Find available accommodations based on location
-        const location = itemType === 'experience' ? (item as typeof mockExperiences[0]).location : (item as typeof mockDestinations[0]).name;
+        const location = itemType === 'experience' ? (item as typeof mockExperiences[0]).location : (item as any).name;
         const accommodations = mockAccommodations.filter(acc => acc.location === location);
         // Sort to put Hotel TamilNadu first
         accommodations.sort((a, b) => {
