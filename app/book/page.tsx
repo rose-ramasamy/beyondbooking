@@ -1424,13 +1424,13 @@ function BookPage() {
         <Header />
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8 break-words">
           <div className="text-center mb-8">
-            <h1 className="text-lg md:text-3xl font-bold text-gray-900 mb-4">
+            <h1 className="text-lg md:text-3xl font-bold text-gray-900 mb-4 break-words">
               {destinationParam && destination
                 ? `Experiences in ${destination.name}`
                 : 'All Experiences in Tamil Nadu'
               }
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 break-words">
               {destinationParam && destination
                 ? `Discover and book unique cultural experiences in ${destination.name}`
                 : 'Discover and book unique cultural experiences across Tamil Nadu'
