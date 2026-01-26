@@ -1569,7 +1569,7 @@ function BookPage() {
             <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
               <div className="flex items-start space-x-4 mb-6">
                 <div className={`text-4xl w-16 h-16 rounded-full ${itemType === 'experience' ? 'bg-gradient-to-br from-green-400 to-green-600' : 'bg-gradient-to-br from-blue-400 to-blue-600'} flex items-center justify-center text-white font-bold`}>
-                  {itemType === 'experience' ? (selectedItem?.title?.charAt(0) || 'E') : selectedItem?.image}
+                  {itemType === 'experience' ? (selectedItem?.title?.charAt(0) || 'E') : (selectedItem?.name?.charAt(0) || 'D')}
                 </div>
                 <div className="flex-1">
                   <h1 className="text-3xl font-bold text-gray-900 mb-2">
