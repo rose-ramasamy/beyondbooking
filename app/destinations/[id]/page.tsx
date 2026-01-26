@@ -84,7 +84,7 @@ const destinationsData = {
     darshanOptions: [
       { name: 'Normal Darshan', price: 50, duration: '30 mins' },
       { name: 'VIP Darshan', price: 200, duration: '15 mins' },
-      { name: 'Special Pooja', price: 500, duration: '1 hour' },
+      { name: 'Special Archana', price: 500, duration: '1 hour' },
     ],
   },
   kodaikanal: {
@@ -174,7 +174,7 @@ const destinationsData = {
     darshanOptions: [
       { name: 'Normal Darshan', price: 30, duration: '45 mins' },
       { name: 'VIP Darshan', price: 150, duration: '20 mins' },
-      { name: 'Special Pooja', price: 400, duration: '1 hour' },
+      { name: 'Special Archana', price: 400, duration: '1 hour' },
     ],
   },
   kanchipuram: {
@@ -249,7 +249,7 @@ const destinationsData = {
     darshanOptions: [
       { name: 'Normal Darshan', price: 0, duration: '30 mins' },
       { name: 'VIP Darshan', price: 100, duration: '15 mins' },
-      { name: 'Special Pooja', price: 250, duration: '1 hour' },
+      { name: 'Special Archana', price: 250, duration: '1 hour' },
     ],
   },
   'kolli-hills': {
@@ -283,6 +283,8 @@ export async function generateStaticParams() {
     { id: 'kodaikanal' },
     { id: 'rameswaram' },
     { id: 'chennai' },
+    { id: 'thanjavur' },
+    { id: 'kanchipuram' },
     { id: 'srivilliputhur' },
     { id: 'palani' },
     { id: 'kolli-hills' },
@@ -919,7 +921,7 @@ export default async function DestinationDetail({ params }: { params: Promise<{ 
                   <p className="text-sm text-gray-600 mb-2">{option.duration}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-bold text-green-600">₹{option.price}</span>
-                    <Link href={`/book?id=${destinationId}&type=destination&darshan=${option.name.toLowerCase().replace(' ', '-')}`} className="bg-orange-600 text-white px-3 py-1 rounded text-sm hover:bg-orange-700">
+                    <Link href={`/book?id=${destinationId}&type=destination&darshan=${option.name.toLowerCase().replace(' ', '-')}`} className="inline-block bg-orange-600 !text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-700 transition-colors text-center" style={{color: 'white', textDecoration: 'none'}}>
                       Book Now
                     </Link>
                   </div>

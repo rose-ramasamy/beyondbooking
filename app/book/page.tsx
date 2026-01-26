@@ -1065,7 +1065,280 @@ function BookPage() {
       if (itemType === 'experience') {
         item = mockExperiences.find(exp => exp.id === itemId);
       } else if (itemType === 'destination') {
-        item = mockDestinations.find(dest => dest.id === itemId);
+        // Import destinationsData dynamically or use it directly
+        const destinationsData = {
+          mahabalipuram: {
+            name: 'Mahabalipuram',
+            description: 'Mahabalipuram, also known as Mamallapuram, is a town in Chengalpattu district in the southeastern Indian state of Tamil Nadu. It is one of the UNESCO World Heritage Sites in India and is famous for its ancient rock-cut temples and monuments.',
+            district: 'Chengalpattu',
+            category: 'Heritage & Culture',
+            rating: 4.5,
+            visitorCount: 50000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/mamallapuram-shore-temple-1653384258_d88d3d01bc1bbf48db9b.webp',
+            highlights: [
+              { name: 'Shore Temple', desc: '7th-century structural temple complex', icon: '🕉️' },
+              { name: 'Five Rathas', desc: 'Five monolithic temples carved from single rocks', icon: '🏛️' },
+              { name: 'Arjuna\'s Penance', desc: 'Largest bas-relief in the world', icon: '🎨' },
+              { name: 'Panch Pandava Cave', desc: 'Ancient cave temple with intricate carvings', icon: '🕳️' },
+            ],
+            bestTime: 'October to March',
+            entryFee: '₹40 for Indians, ₹600 for foreigners',
+            howToReach: 'Located 58 km south of Chennai. Well connected by road and rail.',
+            accommodation: 'Various hotels and homestays available ranging from ₹1,000-5,000/night',
+            localCuisine: 'Fresh seafood, traditional Tamil meals, and street food',
+          },
+          ooty: {
+            name: 'Ooty',
+            description: 'Ooty, also known as Udhagamandalam, is a popular hill station located in the Nilgiri Hills of Tamil Nadu. It is often called the "Queen of Hill Stations" and is famous for its tea plantations, lakes, and colonial architecture.',
+            district: 'Nilgiris',
+            category: 'Hill Station',
+            rating: 4.3,
+            visitorCount: 80000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/ooty-1655457424_bca80f81e8391ebdaaca.webp',
+            highlights: [
+              { name: 'Ooty Lake', desc: 'Artificial lake with boating facilities', icon: '🚣' },
+              { name: 'Botanical Gardens', desc: 'Beautiful gardens with exotic plants', icon: '🌺' },
+              { name: 'Rose Garden', desc: 'Famous rose garden with 20,000 varieties', icon: '🌹' },
+              { name: 'Doddabetta Peak', desc: 'Highest peak in the Nilgiri Hills', icon: '⛰️' },
+            ],
+            bestTime: 'April to June, September to November',
+            entryFee: 'Free entry to most attractions',
+            howToReach: 'Located 535 km from Chennai. Connected by road and the famous Nilgiri Mountain Railway.',
+            accommodation: 'Wide range from budget guesthouses to luxury resorts',
+            localCuisine: 'Tea, homemade chocolates, and traditional Nilgiri cuisine',
+          },
+          kanyakumari: {
+            name: 'Kanyakumari',
+            description: 'Kanyakumari is the southernmost point of mainland India, where the Arabian Sea, the Indian Ocean, and the Bay of Bengal meet. It is a sacred place associated with Goddess Kanyakumari.',
+            district: 'Kanyakumari',
+            category: 'Beach & Religious',
+            rating: 4.4,
+            visitorCount: 60000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/kanyakumari-1656091428_cf69d9a9dbec82018046.jpg',
+            highlights: [
+              { name: 'Vivekananda Rock', desc: 'Memorial where Swami Vivekananda meditated', icon: '🪨' },
+              { name: 'Kanyakumari Temple', desc: 'Ancient temple dedicated to Goddess Kanyakumari', icon: '🙏' },
+              { name: 'Sunset Point', desc: 'Famous viewpoint for spectacular sunsets', icon: '🌅' },
+              { name: 'Gandhi Memorial', desc: 'Where Mahatma Gandhi\'s ashes were kept', icon: '🇮🇳' },
+            ],
+            bestTime: 'October to March',
+            entryFee: '₹20 for Vivekananda Rock ferry',
+            howToReach: 'Located 242 km from Thiruvananthapuram. Well connected by road.',
+            accommodation: 'Various hotels and resorts with sea views',
+            localCuisine: 'Fresh seafood, coconut-based dishes, and traditional Tamil food',
+          },
+          madurai: {
+            name: 'Madurai',
+            description: 'Madurai, the cultural capital of Tamil Nadu, is one of the oldest continuously inhabited cities in the world. Famous for the Meenakshi Amman Temple, it represents the Dravidian culture and architecture at its finest.',
+            district: 'Madurai',
+            category: 'Heritage & Culture',
+            rating: 4.6,
+            visitorCount: 100000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/meenakshi-amman-temple-1656170467_cfebe78d69f069f881aa.webp',
+            highlights: [
+              { name: 'Meenakshi Amman Temple', desc: 'Magnificent Dravidian temple with thousand-pillared hall', icon: '🕉️' },
+              { name: 'Thirumalai Nayak Palace', desc: '17th-century palace showcasing Indo-Saracenic architecture', icon: '🏰' },
+              { name: 'Gandhi Memorial Museum', desc: 'Museum dedicated to Mahatma Gandhi\'s life and legacy', icon: '🇮🇳' },
+              { name: 'Vaigai River', desc: 'Sacred river with beautiful ghats and evening walks', icon: '🌊' },
+            ],
+            bestTime: 'October to March',
+            entryFee: 'Free for temple, ₹50 for palace',
+            howToReach: 'Well connected by air (Madurai Airport), rail, and road. 460 km from Chennai.',
+            accommodation: 'Budget to luxury hotels available, traditional heritage stays',
+            localCuisine: 'Madurai mutton biryani, jigar masala, and traditional South Indian meals',
+            darshanOptions: [
+              { name: 'Normal Darshan', price: 50, duration: '30 mins' },
+              { name: 'VIP Darshan', price: 200, duration: '15 mins' },
+              { name: 'Special Archana', price: 500, duration: '1 hour' },
+            ],
+          },
+          kodaikanal: {
+            name: 'Kodaikanal',
+            description: 'Kodaikanal, the "Princess of Hill Stations," is a serene hill station in the Palani Hills. Known for its misty mountains, peaceful lakes, and colonial architecture, it offers a perfect retreat from city life.',
+            district: 'Dindigul',
+            category: 'Hill Station',
+            rating: 4.4,
+            visitorCount: 70000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/kodaikanal-1655279477_0cdce0d4e58596e4fb33.webp',
+            highlights: [
+              { name: 'Kodaikanal Lake', desc: 'Star-shaped artificial lake perfect for boating', icon: '🚣' },
+              { name: 'Coaker\'s Walk', desc: 'Scenic 1km walk with panoramic valley views', icon: '🚶' },
+              { name: 'Pillar Rocks', desc: 'Unique rock formation resembling a pillar', icon: '🪨' },
+              { name: 'Bear Shola Falls', desc: 'Beautiful waterfall surrounded by forests', icon: '💧' },
+            ],
+            bestTime: 'April to June, September to November',
+            entryFee: '₹10 for boat ride, free for most attractions',
+            howToReach: 'Located 120 km from Madurai. Connected by road, nearest airport is Madurai.',
+            accommodation: 'Cottages, resorts, and homestays with mountain views',
+            localCuisine: 'Fresh trout fish, homemade chocolates, and organic farm produce',
+          },
+          rameswaram: {
+            name: 'Rameswaram',
+            description: 'Rameswaram, the sacred island temple town, is one of the holiest places in India for Hindus. Connected to the epic Ramayana, it houses the magnificent Ramanathaswamy Temple and offers spiritual solace.',
+            district: 'Ramanathapuram',
+            category: 'Religious & Spiritual',
+            rating: 4.5,
+            visitorCount: 40000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/rameswaram-1655457953_09de320de48b98dece1a.webp',
+            highlights: [
+              { name: 'Ramanathaswamy Temple', desc: 'One of the 12 Jyotirlingas with longest temple corridor', icon: '🕉️' },
+              { name: 'Adam\'s Bridge', desc: 'Chain of limestone shoals between India and Sri Lanka', icon: '🌉' },
+              { name: 'Dhanushkodi', desc: 'Ghost town with pristine beaches and ruins', icon: '🏖️' },
+              { name: 'Pamban Bridge', desc: 'Historic railway bridge connecting mainland to island', icon: '🚆' },
+            ],
+            bestTime: 'October to April',
+            entryFee: 'Free for temple, ₹50 for camera',
+            howToReach: 'Located 163 km from Madurai. Connected by road and the famous Pamban Bridge.',
+            accommodation: 'Budget hotels, ashrams, and temple accommodations',
+            localCuisine: 'Seafood delicacies, temple prasad, and traditional vegetarian meals',
+            darshanOptions: [
+              { name: 'Normal Darshan', price: 0, duration: '1-2 hours' },
+              { name: 'VIP Darshan', price: 100, duration: '30 mins' },
+              { name: 'Special Abhishek', price: 300, duration: '45 mins' },
+            ],
+          },
+          chennai: {
+            name: 'Chennai',
+            description: 'Chennai, the capital of Tamil Nadu, is a vibrant metropolis blending colonial heritage with modern cosmopolitan culture. Known as the "Gateway to South India," it offers a mix of history, culture, and contemporary attractions.',
+            district: 'Chennai',
+            category: 'Urban & Cultural',
+            rating: 4.2,
+            visitorCount: 500000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/chennai-1654764398_76539011bf752b01585f.webp',
+            highlights: [
+              { name: 'Marina Beach', desc: 'Second longest urban beach in the world', icon: '🏖️' },
+              { name: 'Kapaleeshwarar Temple', desc: 'Ancient Dravidian temple dedicated to Lord Shiva', icon: '🕉️' },
+              { name: 'Fort St. George', desc: 'Historic British fort and museum', icon: '🏰' },
+              { name: 'San Thome Basilica', desc: 'Beautiful Gothic cathedral and pilgrimage site', icon: '⛪' },
+            ],
+            bestTime: 'December to February',
+            entryFee: 'Varies by attraction, ₹50-200',
+            howToReach: 'Major international airport, extensive rail and road connectivity',
+            accommodation: 'From budget hotels to 5-star resorts, heritage properties',
+            localCuisine: 'Chettinad cuisine, filter coffee, street food, and seafood',
+          },
+          thanjavur: {
+            name: 'Thanjavur',
+            description: 'Thanjavur, the "Rice Bowl of Tamil Nadu," is a city steeped in history and classical arts. Famous for the Brihadeeswarar Temple (UNESCO site) and Nayak architecture, it\'s the cultural heart of Tamil classical music and dance.',
+            district: 'Thanjavur',
+            category: 'Heritage & Arts',
+            rating: 4.7,
+            visitorCount: 35000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/thanjavur-1655294212_8d67c2fdaa46899ddda7.webp',
+            highlights: [
+              { name: 'Brihadeeswarar Temple', desc: 'UNESCO World Heritage Site with massive vimana', icon: '🕉️' },
+              { name: 'Thanjavur Palace', desc: 'Royal palace complex with museum and art gallery', icon: '🏰' },
+              { name: 'Schwartz Church', desc: 'Historic Danish missionary church', icon: '⛪' },
+              { name: 'Saraswathi Mahal Library', desc: 'One of India\'s oldest libraries', icon: '📚' },
+            ],
+            bestTime: 'October to March',
+            entryFee: '₹30 for temple, ₹50 for palace',
+            howToReach: 'Located 350 km from Chennai. Well connected by rail and road.',
+            accommodation: 'Heritage hotels, budget lodges, and traditional homes',
+            localCuisine: 'Thanjavur briyani, traditional vegetarian meals, and sweet dishes',
+            darshanOptions: [
+              { name: 'Normal Darshan', price: 30, duration: '45 mins' },
+              { name: 'VIP Darshan', price: 150, duration: '20 mins' },
+              { name: 'Special Archana', price: 400, duration: '1 hour' },
+            ],
+          },
+          kanchipuram: {
+            name: 'Kanchipuram',
+            description: 'Kanchipuram, the "City of Thousand Temples," is one of the seven sacred cities of India. Famous for its silk sarees, ancient temples, and religious significance, it\'s a living museum of Dravidian architecture.',
+            district: 'Kanchipuram',
+            category: 'Religious & Textile',
+            rating: 4.5,
+            visitorCount: 25000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/kancheepuram-1656094320_3f77ec88eada40ee1f36.webp',
+            highlights: [
+              { name: 'Kamakshi Amman Temple', desc: 'Ancient temple dedicated to Goddess Kamakshi', icon: '🙏' },
+              { name: 'Varadharaja Temple', desc: 'Vaishnavite temple with intricate carvings', icon: '🕉️' },
+              { name: 'Ekambareswarar Temple', desc: 'Temple with 1000-year-old mango tree', icon: '🌳' },
+              { name: 'Silk Weaving Centers', desc: 'Famous handloom silk saree manufacturing', icon: '🧵' },
+            ],
+            bestTime: 'October to March',
+            entryFee: 'Free for temples',
+            howToReach: 'Located 75 km from Chennai. Well connected by road and local trains.',
+            accommodation: 'Temple stays, budget hotels, and traditional homes',
+            localCuisine: 'Traditional vegetarian meals, temple prasad, and local delicacies',
+            darshanOptions: [
+              { name: 'Normal Darshan', price: 0, duration: '1 hour' },
+              { name: 'VIP Darshan', price: 100, duration: '30 mins' },
+              { name: 'Special Archana', price: 250, duration: '45 mins' },
+            ],
+          },
+          srivilliputhur: {
+            name: 'Srivilliputhur',
+            description: 'Srivilliputhur is famous for the Andal Temple, one of the 108 Divya Desams dedicated to Lord Vishnu. It\'s the birthplace of the poet-saint Andal and showcases magnificent Dravidian architecture.',
+            district: 'Virudhunagar',
+            category: 'Religious & Heritage',
+            rating: 4.4,
+            visitorCount: 50000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/srivilliputhur-andal-temple-1656235549_c00a2b162e36825fac57.webp',
+            highlights: [
+              { name: 'Andal Temple', desc: 'Ancient temple dedicated to Goddess Andal with intricate carvings', icon: '🕉️' },
+              { name: 'Rajagopuram', desc: '194-foot tall tower built by Vijayanagara kings', icon: '🏗️' },
+              { name: 'Musical Pillars', desc: 'Pillars that produce musical notes when struck', icon: '🎵' },
+              { name: 'Festivals', desc: 'Famous for Andal Jayanti and other religious celebrations', icon: '🎉' },
+            ],
+            bestTime: 'October to March',
+            entryFee: 'Free',
+            howToReach: 'Located 75 km from Madurai. Bus station 1 km, railway station 2 km away.',
+            accommodation: 'Budget hotels and lodges available',
+            localCuisine: 'Traditional South Indian vegetarian meals',
+            darshanOptions: [
+              { name: 'Normal Darshan', price: 0, duration: '45 mins' },
+              { name: 'VIP Darshan', price: 50, duration: '20 mins' },
+              { name: 'Special Archana', price: 150, duration: '30 mins' },
+            ],
+          },
+          palani: {
+            name: 'Palani',
+            description: 'Palani is home to the famous Dhandayuthapani Swamy Temple, one of the richest temples in India dedicated to Lord Muruga. Located on Sivagiri Hill, it requires climbing 670 steps to reach.',
+            district: 'Dindigul',
+            category: 'Religious',
+            rating: 4.6,
+            visitorCount: 100000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/arulmigu-dhandayuthapani-swamy-temple-palani-1657867829_3fda42dd1b3ef365f142.webp',
+            highlights: [
+              { name: 'Dhandayuthapani Temple', desc: 'Temple with idol made of Navapashanam herbs', icon: '🕉️' },
+              { name: '670 Steps', desc: 'Sacred steps leading to the temple', icon: '🪜' },
+              { name: 'Ropeway', desc: 'Modern ropeway for easier access', icon: '🚡' },
+              { name: 'Thai Poosam Festival', desc: 'Major festival with Kavadi procession', icon: '🎊' },
+            ],
+            bestTime: 'October to May',
+            entryFee: 'Free',
+            howToReach: 'Located 114 km from Coimbatore. Bus stand 1 km, railway station 2 km away.',
+            accommodation: 'Hotels and lodges near the temple',
+            localCuisine: 'Traditional Tamil vegetarian food and temple prasad',
+            darshanOptions: [
+              { name: 'Normal Darshan', price: 0, duration: '30 mins' },
+              { name: 'VIP Darshan', price: 100, duration: '15 mins' },
+              { name: 'Special Archana', price: 250, duration: '1 hour' },
+            ],
+          },
+          'kolli-hills': {
+            name: 'Kolli Hills',
+            description: 'Gifted with pleasant weather throughout the year, Kolli hills is one of those round the season destinations in Tamil Nadu. Unique in landscape and attractions, it has a scenic beauty and has plenty to offer for the exploring travellers.',
+            district: 'Namakkal',
+            category: 'Hill Station',
+            rating: 4.3,
+            visitorCount: 50000,
+            image: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/kolli-hills-1656181182_756ec5b879172b6a9eb2.webp',
+            highlights: [
+              { name: 'Agasagangai Waterfalls', desc: 'Beautiful waterfall requiring 1000 steps descent', icon: '💧' },
+              { name: 'Vasalurpatty Lake', desc: 'Artificial lake for boating and relaxation', icon: '🏞️' },
+              { name: 'Siddhar Caves', desc: 'Ancient caves of Bogar and Agastya', icon: '🕳️' },
+              { name: 'Selur Viewpoint', desc: 'Highest point with spectacular views', icon: '🏔️' },
+            ],
+            bestTime: 'Throughout the year',
+            entryFee: 'Free',
+            howToReach: 'Located in Namakkal district. Accessible from Namakkal, Rasipuram, or Salem.',
+            accommodation: 'Limited options, basic lodges and homestays',
+            localCuisine: 'Local Tamil cuisine, fresh produce from plantations',
+          }
+        };
+        item = destinationsData[itemId as keyof typeof destinationsData];
       }
 
       if (item) {
@@ -1331,10 +1604,13 @@ function BookPage() {
                 <div className="mb-6">
                   <h3 className="font-semibold text-gray-900 mb-3">Highlights</h3>
                   <div className="grid md:grid-cols-2 gap-2">
-                    {selectedItem.highlights.map((highlight: string, index: number) => (
+                    {selectedItem.highlights.map((highlight: any, index: number) => (
                       <div key={index} className="flex items-center text-sm text-gray-600">
-                        <span className="text-green-500 mr-2">✓</span>
-                        {highlight}
+                        <span className="text-green-500 mr-2">{highlight.icon || '✓'}</span>
+                        <div>
+                          <span className="font-medium">{highlight.name}</span>
+                          {highlight.desc && <span className="text-gray-500"> - {highlight.desc}</span>}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -1371,7 +1647,7 @@ function BookPage() {
 
               <form onSubmit={handleBookingSubmit} className="space-y-8">
                 {/* Enhanced Trip Details */}
-                <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-gray-200/50 shadow-sm">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="p-2 bg-blue-100 rounded-xl">
                       <span className="text-blue-600 text-lg">📅</span>
@@ -1438,6 +1714,41 @@ function BookPage() {
                     )}
                   </div>
                 </div>
+
+                {/* Darshan Options for Destinations */}
+                {itemType === 'destination' && selectedItem && (selectedItem as any).darshanOptions && (
+                  <div className="bg-orange-50 p-6 rounded-2xl border border-orange-200">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="p-2 bg-orange-100 rounded-xl">
+                        <span className="text-orange-600 text-lg">🙏</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-orange-800">Temple Darshan Options</h3>
+                    </div>
+                    <p className="text-orange-700 mb-6">Choose your preferred darshan experience</p>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {(selectedItem as any).darshanOptions.map((option: any, index: number) => (
+                        <div
+                          key={index}
+                          className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
+                            selectedDarshan?.name === option.name
+                              ? 'border-orange-500 bg-orange-100 shadow-md'
+                              : 'border-orange-200 hover:border-orange-300 hover:bg-orange-50'
+                          }`}
+                          onClick={() => setSelectedDarshan(option)}
+                        >
+                          <h4 className="font-semibold text-gray-900 mb-2">{option.name}</h4>
+                          <p className="text-sm text-gray-600 mb-2">{option.duration}</p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-lg font-bold text-green-600">₹{option.price}</span>
+                            {selectedDarshan?.name === option.name && (
+                              <span className="text-orange-600 font-medium text-sm">✓ Selected</span>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Tourist Information */}
                 <div className="bg-gray-50 p-4 rounded-lg">
