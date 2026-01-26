@@ -1420,11 +1420,11 @@ function BookPage() {
       : mockExperiences;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-x-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-x-auto">
         <Header />
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4 break-words">
               {destinationParam && destination
                 ? `Experiences in ${destination.name}`
                 : 'All Experiences in Tamil Nadu'
@@ -1450,13 +1450,13 @@ function BookPage() {
                   <span className="text-4xl">{experience.image}</span>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-gray-900 mb-1">
+                  <h3 className="font-semibold text-gray-900 mb-1 break-words">
                     {experience.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-2">
+                  <p className="text-sm text-gray-600 mb-2 break-words">
                     {experience.location} • {experience.duration}
                   </p>
-                  <p className="text-xs text-gray-600 mb-3 line-clamp-2">
+                  <p className="text-xs text-gray-600 mb-3 line-clamp-2 break-words">
                     {experience.description}
                   </p>
                   <div className="flex items-center justify-between">
@@ -2099,8 +2099,8 @@ function BookPage() {
                       <div className="flex items-start space-x-3">
                         <div className="text-2xl">{experience.image}</div>
                         <div className="flex-1">
-                          <h4 className="font-medium text-gray-900 mb-1">{experience.title}</h4>
-                          <p className="text-sm text-gray-600 mb-2">{experience.description}</p>
+                          <h4 className="font-medium text-gray-900 mb-1 break-words">{experience.title}</h4>
+                          <p className="text-sm text-gray-600 mb-2 break-words">{experience.description}</p>
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-2">
                               <span className="text-yellow-500 text-sm">⭐ {experience.rating}</span>
