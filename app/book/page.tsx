@@ -1420,11 +1420,11 @@ function BookPage() {
       : mockExperiences;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-x-auto">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <Header />
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8 break-words">
           <div className="text-center mb-8">
-            <h1 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h1 className="text-lg md:text-3xl font-bold text-gray-900 mb-4">
               {destinationParam && destination
                 ? `Experiences in ${destination.name}`
                 : 'All Experiences in Tamil Nadu'
