@@ -39,9 +39,9 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="brand">
               <img
-                src={process.env.NODE_ENV === 'production' ? "/beyondbooking/bb-logo-png.png" : "/bb-logo-png.png"}
+                src={process.env.NODE_ENV === 'production' ? "/beyondbooking/bb-final-logo.png" : "/bb-final-logo.png"}
                 alt="Beyond Booking"
-                className="h-16 w-auto"
+                className="h-14 w-auto"
               />
             </Link>
           </div>
