@@ -1,0 +1,24 @@
+Architecture Diagram for Beyond Booking
+
++-------------------+       +-------------------+       +-------------------+
+|   Frontend        |       |   Backend         |       |   Database        |
+|   (Next.js)       |<----->|   (Node.js)       |<----->|   (MongoDB)       |
+|                   |       |                   |       |                   |
+| - UI Components   |       | - API Endpoints   |       | - Users           |
+| - Routing         |       | - Business Logic  |       | - Bookings        |
+| - Client State    |       | - Auth Handling   |       | - Destinations    |
++-------------------+       +-------------------+       +-------------------+
+         |                           |                           |
+         |                           |                           |
+         v                           v                           v
++-------------------+       +-------------------+       +-------------------+
+|   User Browser    |       |   AI Service      |       |   External APIs   |
+|   (Tourist/Op)    |       |   (Recommendations)|     |   (Weather, etc.) |
++-------------------+       +-------------------+       +-------------------+
+
+Flow:
+1. User interacts with Frontend.
+2. Frontend sends requests to Backend.
+3. Backend queries Database and AI for data.
+4. Responses sent back to Frontend.
+5. AI integrates for personalized suggestions.
