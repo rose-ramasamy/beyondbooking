@@ -1,0 +1,22 @@
+<svg width="420" height="80" viewBox="0 0 420 80"
+xmlns="http://www.w3.org/2000/svg">
+
+  <image href="bb-logo-icon.png" x="0" y="0" width="70" height="70"/>
+
+  <text x="90" y="38"
+        font-size="26"
+        font-weight="600"
+        fill="#4f7cff"
+        font-family="Arial, sans-serif">
+    Beyond Booking
+  </text>
+
+  <text x="90" y="60"
+        font-size="12"
+        letter-spacing="2"
+        fill="#b5b5b5"
+        font-family="Arial, sans-serif">
+    CATERING EVERYONE
+  </text>
+
+</svg>

@@ -35,31 +35,31 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center min-h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="brand">
               <img
-                src={process.env.NODE_ENV === 'production' ? "/beyondbooking/bb-logo.png" : "/bb-logo.png"}
+                src={process.env.NODE_ENV === 'production' ? "/beyondbooking/bb-logo-png.png" : "/bb-logo-png.png"}
                 alt="Beyond Booking"
-                className="h-10 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            <Link href="/discover" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+            <Link href="/discover" className="nav-item text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">
               Discover
             </Link>
-            <Link href="/discover#experiences" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+            <Link href="/discover#experiences" className="nav-item text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">
               Experiences
             </Link>
             {mounted && user?.role === 'operator' && (
-              <Link href="/operator/dashboard" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/operator/dashboard" className="nav-item text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">
                 Dashboard
               </Link>
             )}
             {mounted && user?.role === 'tourist' && (
-              <Link href="/profile" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/profile" className="nav-item text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">
                 My Profile
               </Link>
             )}
