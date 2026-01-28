@@ -41,7 +41,7 @@ export default function Header() {
               <img
                 src={process.env.NODE_ENV === 'production' ? "/beyondbooking/bb-final-logo.png" : "/bb-final-logo.png"}
                 alt="Beyond Booking"
-                className="h-14 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
           </div>
