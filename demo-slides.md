@@ -1,9 +1,10 @@
 # Beyond Booking: Smart Digital Tourism Platform
 
 ## Title Slide
-- **Project Title:** Beyond Booking
-- **Team:** [Your Team Name]
-- **Hackathon:** [Hackathon Name]
+- **Beyond Booking**
+- **Smart Digital Tourism Experience Platform for Tamil Nadu** 
+- **N Startup Innovation Hackathon:**
+- **Team:** <our names>
 - **Date:** January 28, 2026
 
 ---
@@ -55,7 +56,6 @@
 - **Operator Dashboard:** Experience management.
 - **User Dashboard:** Trip history and recommendations.
 
-*(Note: Take screenshots of your app at http://localhost:3000 and save as PNGs in the workspace folder)*
 
 ---
 
@@ -65,7 +65,6 @@
 - **Database (MongoDB):** Stores users, bookings, destinations, etc.
 - **AI Service:** Recommends based on user data.
 
-*(Note: Create a simple diagram using tools like draw.io and save as PNG)*
 
 ---
 
