@@ -3,7 +3,7 @@
 ## Title Slide
 - **Beyond Booking**
 - **Smart Digital Tourism Experience Platform for Tamil Nadu** 
-- **N Startup Innovation Hackathon:**
+- **TN Startup Innovation Hackathon:**
 - **Team:** <our names>
 - **Date:** January 28, 2026
 
